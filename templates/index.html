@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Recommendation System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Course Recommendation System</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="job_role">Select Job Role:</label>
+                <select id="job_role" name="job_role" class="form-control">
+                    {% for role in job_roles %}
+                        <option value="{{ role }}">{{ role }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="user_id">Enter User ID (for personalized recommendations):</label>
+                <input type="text" id="user_id" name="user_id" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Get Recommendations</button>
+        </form>
+
+        {% if recommendations %}
+            <h2 class="mt-5">Recommendations</h2>
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Skills Required</th>
+                        <th>Sub-Skills Required</th>
+                        <th>Rating (if applicable)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in recommendations %}
+                        <tr>
+                            <td>{{ course.course_id }}</td>
+                            <td>{{ course.title }}</td>
+                            <td>{{ course.description }}</td>
+                            <td>{{ course.skills_required }}</td>
+                            <td>{{ course.sub_skills_required }}</td>
+                            <td>
+                                {% if course.predicted_rating %}
+                                    {{ course.predicted_rating }}
+                                {% else %}
+                                    No rating available
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        
+        <h2 class="mt-5">Rate a Course</h2>
+        <form method="POST" action="/feedback" class="mt-4">
+            <div class="form-group">
+                <label for="feedback_job_role">Select Job Role for Feedback:</label>
+                <select id="feedback_job_role" name="job_role" class="form-control">
+                    {% for role in job_roles %}
+                        <option value="{{ role }}">{{ role }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="user_id_feedback">Enter Your User ID:</label>
+                <input type="text" id="user_id_feedback" name="user_id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="course_id_feedback">Select Course ID:</label>
+                <input type="text" id="course_id_feedback" name="course_id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating (1-5):</label>
+                <input type="number" id="rating" name="rating" class="form-control" min="1" max="5">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Fetch courses when job role is selected
+        $('#job_role').on('change', function() {
+            var jobRole = $(this).val();
+            $.getJSON('/get_courses/' + jobRole, function(data) {
+                var coursesSelect = $('#course_id_feedback');
+                coursesSelect.empty();
+                $.each(data, function(index, course) {
+                    coursesSelect.append($('<option>', {
+                        value: course.course_id,
+                        text: course.title // Changed to title from course_name
+                    }));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
