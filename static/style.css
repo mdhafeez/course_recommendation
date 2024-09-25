@@ -87,3 +87,7 @@ h2 {
 .course-card p {
     color: #495057;
 }
+.logo {
+    height: 500px; /* Adjust the height as needed */
+    width: auto;  /* Maintain the aspect ratio */
+}

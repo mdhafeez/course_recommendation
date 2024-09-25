@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Domain-Based Course Recommender{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <!-- Page Title -->
+    <h2 class="header-title text-center">Course Recommendation Based on Domain</h2>
+    <p class="text-center lead mt-3 mb-1">
+        Select a domain and subdomain to get personalized course recommendations.
+    </p>
+
+    <!-- Form Section -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <form id="recommendation-form" action="/recommend" method="get" onsubmit="return validateForm()">
+                <!-- Domain Selection -->
+                <div class="form-group mb-4">
+                    <label for="domain_id">Select Domain:</label>
+                    <select id="domain_id" name="domain_id" required onchange="updateSubdomains(this.value)" class="form-control">
+                        <option value="" disabled selected>Select a domain</option>
+                        {% for domain in domains %}
+                        <option value="{{ domain.domain_id }}" {% if domain.domain_id == selected_domain_id %}selected{% endif %}>
+                            {{ domain.domain_name }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Subdomain Selection -->
+                <div class="form-group mb-4">
+                    <label for="subdomain_id">Select Subdomain:</label>
+                    <select id="subdomain_id" name="subdomain_id" required class="form-control">
+                        <option value="" disabled selected>Select a subdomain</option>
+                        {% for subdomain in subdomains %}
+                        <option value="{{ subdomain.subdomain_id }}" {% if subdomain.subdomain_id == selected_subdomain_id %}selected{% endif %}>
+                            {{ subdomain.subdomain_name }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                    <div id="subdomain-error" class="text-danger mt-2" style="display:none;">
+                        Please select a subdomain.
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Get Recommendations</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recommendations Section -->
+    {% if recommendations %}
+        <div class="mt-4">
+            <h2 class="text-center">Recommended Courses</h2>
+            <p class="text-center mb-4">
+                Based on your selected domain and subdomain, here are the recommended courses.
+            </p>
+
+            {% if recommendations|length > 0 %}
+            <div class="row">
+                {% for course in recommendations %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{course.course_image_url}}" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ course.course_title }}</h5>
+                            <p class="card-text">{{ course.course_description }}</p>
+                            <p class="text-muted"><strong>Offered by:</strong> {{ course.university }}</p>
+                            <p class="text-muted"><strong>Link:</strong> <a href="{{ course.course_url }}" target="_blank">{{ course.course_url }}</a></p>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-center text-muted">There are no courses related to the selected domain and subdomain at this time.</p>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function updateSubdomains(domainId) {
+        fetch(`/subdomains/${domainId}`)
+            .then(response => response.json())
+            .then(data => {
+                const subdomainSelect = document.getElementById("subdomain_id");
+                subdomainSelect.innerHTML = '';
+                let defaultOption = document.createElement("option");
+                defaultOption.text = 'Select a subdomain';
+                defaultOption.disabled = true;
+                defaultOption.selected = true;
+                subdomainSelect.add(defaultOption);
+
+                data.forEach(subdomain => {
+                    let option = document.createElement("option");
+                    option.value = subdomain.subdomain_id;
+                    option.text = subdomain.subdomain_name;
+                    subdomainSelect.add(option);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function validateForm() {
+        const subdomainSelect = document.getElementById("subdomain_id");
+        const selectedSubdomain = subdomainSelect.value;
+        const errorMessage = document.getElementById("subdomain-error");
+
+        // Check if the user has selected a subdomain
+        if (selectedSubdomain === "" || selectedSubdomain === "Select a subdomain") {
+            errorMessage.style.display = "block"; // Show error message
+            return false; // Prevent form submission
+        }
+
+        errorMessage.style.display = "none"; // Hide error message if valid
+        return true; // Allow form submission
+    }
+</script>
+{% endblock %}

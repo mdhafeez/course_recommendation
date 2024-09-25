@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=device-width, initial-scale=1.0">
+    <title>{% block title %}Course Recommendation System{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            background-color: #343a40;
+            padding: 20px;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .navbar-brand {
+            color: #ffffff !important;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .sidebar .nav-link {
+            color: #ffffff !important;
+            margin: 10px 0;
+        }
+
+        .sidebar .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+
+        .main-content {
+            margin-left: 250px; /* Leave space for the sidebar */
+            padding: 20px;
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px); /* Adjust footer width */
+            left: 250px; /* Align with sidebar */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    {% block styles %}{% endblock %}
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Course Recommender Logo">
+            Course Recommender
+        </a>
+
+        <ul class="navbar-nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('domain') }}">Domain Based</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('visualize_wdata') }}">Data Visualization</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('data_visualization_2') }}">Data Visualization 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link" href="/readme">View README</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main content block -->
+    <div class="main-content">
+        {% block content %}
+        <!-- Page-specific content will be injected here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Course Recommender. All rights reserved. | 
+            <a href="/privacy">Privacy Policy</a> | 
+            <a href="/terms">Terms of Service</a>
+        </p>
+    </div>
+
+    <!-- Include any scripts you need here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

@@ -6,3 +6,6 @@ flask
 scikit-learn
 scipy
 faker
+pygwalker
+dash
+plotly

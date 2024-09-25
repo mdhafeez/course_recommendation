@@ -1,109 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Recommendation System</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1 class="mt-5">Course Recommendation System</h1>
-        <form method="POST" class="mt-4">
-            <div class="form-group">
-                <label for="job_role">Select Job Role:</label>
-                <select id="job_role" name="job_role" class="form-control">
-                    {% for role in job_roles %}
-                        <option value="{{ role }}">{{ role }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="user_id">Enter User ID (for personalized recommendations):</label>
-                <input type="text" id="user_id" name="user_id" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Get Recommendations</button>
-        </form>
+{% extends "base.html" %}
 
+{% block title %}Course Recommendation System{% endblock %}
+{% block content %}
+    <div class="container mt-4">
+        <!-- Page Title and Introduction -->
+        <h2 class="header-title text-center">Course Recommendation System</h2>
+        <p class="text-center lead mt-3">
+            Welcome! This system uses a hybrid recommendation approach to suggest personalized courses based on your selected job role and previous interactions. Please fill in the information below to get tailored recommendations. Entering a User ID is optional but encouraged for better personalization.
+        </p>
+
+        <!-- Form Section -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <form id="recommendation-form" method="POST" onsubmit="return validateForm()">
+                    <div class="form-group mb-4">
+                        <label for="job_role">Select Job Role:</label>
+                        <select id="job_role" name="job_role" class="form-control">
+                            <option value="" disabled selected>Choose a job role</option>
+                            {% for role in job_roles %}
+                                <option value="{{ role }}">{{ role }}</option>
+                            {% endfor %}
+                        </select>
+                        <div id="job-role-error" class="text-danger mt-2" style="display:none;">
+                            Please select a job role before proceeding.
+                        </div>
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <label for="user_id">Enter User ID (for personalized recommendations, optional):</label>
+                        <input type="text" id="user_id" name="user_id" class="form-control" placeholder="e.g., 12345">
+                        <div id="user-id-info" class="text-muted mt-2">
+                            Entering a User ID is optional but highly encouraged for better personalized recommendations.
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Get Recommendations</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Recommendations Section -->
         {% if recommendations %}
-            <h2 class="mt-5">Recommendations</h2>
-            <table class="table table-striped mt-4">
-                <thead>
-                    <tr>
-                        <th>Course ID</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Skills Required</th>
-                        <th>Sub-Skills Required</th>
-                        <th>Rating (if applicable)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for course in recommendations %}
-                        <tr>
-                            <td>{{ course.course_id }}</td>
-                            <td>{{ course.title }}</td>
-                            <td>{{ course.description }}</td>
-                            <td>{{ course.skills_required }}</td>
-                            <td>{{ course.sub_skills_required }}</td>
-                            <td>
-                                {% if course.predicted_rating %}
-                                    {{ course.predicted_rating }}
-                                {% else %}
-                                    No rating available
-                                {% endif %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div class="mt-4">
+            <h2 class="text-center">Your Course Recommendations</h2>
+            <p class="text-center mb-4">
+                Here are some recommended courses based on your job role and past interactions. You can rate these courses to improve future recommendations.
+            </p>
+            
+            <div class="row">
+                {% for course in recommendations %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ course.title }}</h5>
+                            <p class="card-text"><strong>Job Role:</strong> {{ course.job_role }}</p>
+                            <p class="card-text"><strong>Skills Required:</strong> {{ course.skills_required }}</p>
+                            <p class="card-text"><strong>Sub-Skills:</strong> {{ course.sub_skills_required }}</p>
+                            <p class="card-text">{{ course.description }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <!-- Star Rating with Tooltips and Descriptive Label -->
+                            <div class="rating" data-course-id="{{ course.course_id }}" data-user-id="{{ user_id }}">
+                                <input type="radio" name="rating-{{ course.course_id }}" value="5" id="5-{{ course.course_id }}">
+                                <label for="5-{{ course.course_id }}" title="Excellent"><i class="fas fa-star"></i></label>
+                                
+                                <input type="radio" name="rating-{{ course.course_id }}" value="4" id="4-{{ course.course_id }}">
+                                <label for="4-{{ course.course_id }}" title="Good"><i class="fas fa-star"></i></label>
+                                
+                                <input type="radio" name="rating-{{ course.course_id }}" value="3" id="3-{{ course.course_id }}">
+                                <label for="3-{{ course.course_id }}" title="Average"><i class="fas fa-star"></i></label>
+                                
+                                <input type="radio" name="rating-{{ course.course_id }}" value="2" id="2-{{ course.course_id }}">
+                                <label for="2-{{ course.course_id }}" title="Fair"><i class="fas fa-star"></i></label>
+                                
+                                <input type="radio" name="rating-{{ course.course_id }}" value="1" id="1-{{ course.course_id }}">
+                                <label for="1-{{ course.course_id }}" title="Poor"><i class="fas fa-star"></i></label>
+                            </div>
+                            
+                            <!-- Rating description that will update dynamically -->
+                            <div class="text-center mt-2">
+                                <span id="rating-label-{{ course.course_id }}">How would you rate this course Recommendation?</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
         {% endif %}
-        
-        <h2 class="mt-5">Rate a Course</h2>
-        <form method="POST" action="/feedback" class="mt-4">
-            <div class="form-group">
-                <label for="feedback_job_role">Select Job Role for Feedback:</label>
-                <select id="feedback_job_role" name="job_role" class="form-control">
-                    {% for role in job_roles %}
-                        <option value="{{ role }}">{{ role }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="user_id_feedback">Enter Your User ID:</label>
-                <input type="text" id="user_id_feedback" name="user_id" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="course_id_feedback">Select Course ID:</label>
-                <input type="text" id="course_id_feedback" name="course_id" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="rating">Rating (1-5):</label>
-                <input type="number" id="rating" name="rating" class="form-control" min="1" max="5">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Feedback</button>
-        </form>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
+{% block scripts %}
     <script>
-        // Fetch courses when job role is selected
-        $('#job_role').on('change', function() {
-            var jobRole = $(this).val();
-            $.getJSON('/get_courses/' + jobRole, function(data) {
-                var coursesSelect = $('#course_id_feedback');
-                coursesSelect.empty();
-                $.each(data, function(index, course) {
-                    coursesSelect.append($('<option>', {
-                        value: course.course_id,
-                        text: course.title // Changed to title from course_name
-                    }));
+        function validateForm() {
+            const jobRole = document.getElementById("job_role").value;
+            const jobRoleError = document.getElementById("job-role-error");
+
+            // Check if the user has selected a job role
+            if (jobRole === "" || jobRole === "Choose a job role") {
+                jobRoleError.style.display = "block"; // Show error message
+                return false; // Prevent form submission
+            }
+
+            jobRoleError.style.display = "none"; // Hide error message if valid
+            return true; // Allow form submission
+        }
+
+        $(document).ready(function() {
+            $('.rating input').on('change', function() {
+                var ratingValue = $(this).val();
+                var courseId = $(this).closest('.rating').data('course-id');
+                var userId = $(this).closest('.rating').data('user-id');
+
+                // Send the rating to the server
+                $.ajax({
+                    type: 'POST',
+                    url: '/submit_rating',
+                    data: {
+                        'course_id': courseId,
+                        'user_id': userId,
+                        'rating': ratingValue
+                    },
+                    success: function(response) {
+                        alert('Thank you for your rating: ' + ratingValue + ' stars');
+                    },
+                    error: function(error) {
+                        alert('An error occurred. Please try again.');
+                    }
                 });
             });
         });
     </script>
-</body>
-</html>
+{% endblock %}

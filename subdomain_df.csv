@@ -1,0 +1,125 @@
+subdomain_id,subdomain_name,subdomain_name_BM,skills,domain_id
+1,ICT Strategic Management,Pengurusan Strategik ICT,"ICT Policy Development, Strategic Planning, IT Governance, Enterprise Architecture, Business Process Management, Risk Management, Change Management, Performance Measurement",8
+2,Information Management,Pengurusan Maklumat,"Data Governance, Information Architecture, Metadata Management, Document Management Systems, Data Quality Management, Records Management, Knowledge Management, Information Security",8
+3,ICT Project Management,Pengurusan Projek ICT,"Project Planning, Budget Management, Stakeholder Management, Risk Management, Agile Methodologies, Quality Assurance, Resource Allocation, Project Lifecycle Management",8
+4,System Development,Pembangunan Sistem,"Software Development Life Cycle (SDLC), Object-Oriented Programming, Database Design, System Analysis and Design, Agile Development, Version Control Systems, API Development, Testing and Debugging",8
+5,Database Management,Pengurusan Pangkalan Data,"SQL, Database Design and Modeling, Database Security, Backup and Recovery, Data Warehousing, Performance Tuning, NoSQL Databases, ETL Processes",8
+6,Data Center Management,Pengurusan Pusat Data,"Data Center Infrastructure Management (DCIM), Network Administration, Virtualization, Backup and Disaster Recovery, Data Center Security, Server Management, Cloud Computing, Environmental Monitoring",8
+7,ICT Security Management,Pengurusan Keselamatan ICT,"Cybersecurity Policies, Network Security, Incident Response, Security Auditing, Identity and Access Management, Encryption Technologies, Vulnerability Assessment, Compliance and Regulatory Requirements",8
+8,Network Management,Pengurusan Rangkaian,"Network Design and Implementation, Network Monitoring and Troubleshooting, Wireless Networking, Network Security, Routing and Switching, WAN Technologies, VoIP, Network Performance Optimization",8
+13,Change Management,Perubahan,"Change leadership, strategic planning, stakeholder management, communication skills",12
+14,Crisis and Conflict Management,Krisis Dan Konflik,"Crisis communication, negotiation, problem-solving, emotional intelligence",12
+35,Confidence Building,Keyakinan Diri,"Public Speaking, Self-Esteem Enhancement, Personal Branding, Effective Communication, Stress Management",1
+37,Import & Export,Import Eksport,"Supply Chain Management in Malaysian Context, Customs Compliance with Malaysian Regulations, International Trade Regulations (Malaysian Perspective), Logistics Coordination for Public Services, Risk Management in Public Procurement ,Export Documentation in Malaysian Public Sector, International Marketing for Malaysian Public Services, Trade Finance for Government Agencies, Market Research for Public Sector Export Initiatives, Negotiation Skills for Government Officials",10
+41,Asset and Store Management,Pengurusan Aset dan Stor,"Asset management, Inventory control, Financial reporting, Supply chain management, Asset valuation",16
+42,Finance,Kewangan,"Financial analysis, Budgeting, Risk management, Financial forecasting, Investment analysis",16
+48,Procurement,Perolehan,"Supplier management, Contract negotiation, Procurement strategies, Cost analysis, Vendor relationship management",16
+49,Malay Language,Bahasa Melayu,"Proficiency in Official Communication, Advanced Vocabulary in Government Terminology, Public Speaking Skills, Listening Comprehension in Formal Settings, Official Report Writing Skills",3
+50,English Language,English,"Proficiency in Official Communication, Advanced Vocabulary in Government Terminology, Public Speaking Skills, Listening Comprehension in Formal Settings, Official Report Writing Skills",3
+51,Mandarin Language,Mandarin,"Proficiency in Official Communication, Advanced Vocabulary in Government Terminology, Public Speaking Skills, Listening Comprehension in Formal Settings, Official Report Writing Skills",3
+52,Project Management,Pengurusan Projek,"Project Planning, Risk Management, Budgeting, Stakeholder Management, Time Management, Communication Skills, Leadership, Problem-Solving",11
+54,Public Policy Management,Pengurusan Dasar Awam,"Policy Analysis, Legislative Knowledge, Public Administration, Strategic Planning, Research Skills, Economic Analysis, Public Speaking, Writing",11
+56,Innovative and Creative Groups,Kumpulan Inovatif dan Kreatif,"Problem-solving, Design thinking, Team collaboration, Brainstorming techniques, Project management, Trend analysis, Adaptability",43
+59,Human Resource Management (Service),Sumber Manusia (Perkhidmatan),"Recruitment, talent management, employee relations, HR analytics",12
+64,Team Reinforcement,Pengukuhan Pasukan,"Team Building Techniques, Conflict Resolution, Collaborative Problem Solving, Leadership Development, Motivational Strategies",1
+72,Desktop Productivity,Produktiviti Desktop,"Microsoft Office Suite, Google Workspace, Email Management, Document Collaboration, Task Automation, Data Analysis with Spreadsheets, Presentation Design, File Management",8
+81,Personality and Professionalism,Keperibadian dan Profesionalisme,"Professional Etiquette, Time Management, Critical Thinking, Personal Integrity, Continuous Learning",1
+82,Coaching,Coaching,"Active listening, Emotional intelligence, Goal setting, Feedback techniques, Motivational skills",13
+84,Research,Penyelidikan,"Literature review, Data collection and analysis, Research design, Report writing, Statistical analysis",14
+87,Training Management,Pengurusan Latihan,"Project management, Training needs analysis, Budget management, Scheduling, Evaluation techniques",13
+88,Personal Finance,Kewangan Peribadi,"Financial planning, Investment strategies, Debt management, Retirement planning, Tax planning",16
+90,Agricultural Development,PENGEMBANGAN PERTANIAN,"Project planning, rural development, resource allocation, stakeholder engagement, sustainable practices.",51
+91,Knowledge of Agricultural Laws & Policies,PENGETAHUAN UNDANG-UNDANG & DASAR BERKAITAN BIDANG PERTANIAN,"Understanding of agricultural legislation, policy analysis, regulatory compliance, legal documentation.",51
+92,Farm Management,PENGURUSAN LADANG,"Farm operations management, budgeting, crop planning, resource management, risk assessment.",51
+93,Agricultural Enforcement,PENGUATKUASAAN PERTANIAN,"Enforcement of agricultural laws, inspection protocols, regulatory compliance, reporting.",51
+94,Agricultural Engineering and Technology,KEJURUTERAAN DAN TEKNOLOGI PERTANIAN,"Agricultural machinery, technology integration, irrigation systems, sustainable engineering practices.",51
+95,Plant Biosecurity Management,PENGURUSAN BIOSEKURITI TUMBUHAN,"Disease, pest management, biosecurity protocols, plant health monitoring, quarantine procedures.",51
+96,Agricultural Land Resource Management,PENGURUSAN SUMBER TANAH PERTANIAN,"Land use planning, soil management, resource conservation, environmental impact assessment.",51
+97,Occupational Safety and Health,Keselamatan Dan Kesihatan Pekerjaan,"Risk assessment, Safety regulations compliance, Emergency response, Workplace safety audits, Ergonomics, Safety training",45
+99,Course Material Development,Pembangunan Bahan Kursus,"Instructional Design, E-Learning Development, Content Authoring Tools, Learning Management Systems (LMS), Multimedia Production, Course Evaluation, Interactive Learning, Curriculum Development",8
+100,General Health,KESIHATAN,"Basic medical knowledge, Patient care, Health assessment, Diagnostic skills, Clinical procedures, Emergency response",53
+101,Intellectual Property Management,Pengurusan Harta Intelek,"IP law knowledge, Patent and trademark filing processes, IP valuation, Licensing agreements, Compliance and risk management, Strategic IP management",43
+102,Estate Management,Harta Pusaka,"Property valuation, legal knowledge, financial planning, estate planning",12
+103,Environmental Management,Pengurusan Persekitaran,"Environmental policy, sustainability practices, regulatory compliance, environmental impact assessment",12
+104,Disaster Management,Pengurusan Bencana,"Crisis management, Emergency response planning, Risk analysis, Resource management, Communication strategies, Recovery planning",45
+105,Official Document Management,Pengurusan Dokumen Rasmi,"Records management, archival methods, regulatory compliance, document security",12
+106,Quality Management,Kualiti,"Quality assurance, continuous improvement, ISO standards, process optimization",12
+107,Psychology and Mind,Psikologi Dan Minda,"Cognitive Behavioral Therapy (CBT), Emotional Intelligence, Mindfulness Techniques, Psychological Assessment, Neuropsychology, Research Methods in Psychology, Stress Management, Psychological Resilience",54
+109,"Science, Technology, and Engineering","Sains, Teknologi dan Kejuruteraan","Advanced Research Methods, Data Analysis and Interpretation, Software Development, Engineering Design and Innovation, System Integration, Project Management, Technology Trends Analysis, Technical Problem Solving",50
+110,Sustainable Leadership,Sustainable Leadership,"Strategic Thinking in Public Policy, Ethical Decision Making in Governance, Stakeholder Engagement with Government and Public, Change Management in Public Sector Reforms, Environmental and Social Governance Awareness, Corporate Social Responsibility in Government Initiatives, Systems Thinking in Public Administration",5
+111,Leadership Gaps,Leadership Gaps,"Effective Communication in Multilingual Contexts, Emotional Intelligence in Public Service, Conflict Resolution in Government Settings, Adaptability to Policy Changes, Coaching and Mentoring within Government Agencies, Decision Making under Public Scrutiny, Time Management in Bureaucratic Processes",5
+112,Future-Proof Leadership,Future-proof Leadership,"Digital Literacy for E-Government, Innovation and Creativity in Public Services, Data-Driven Decision Making in Government, Agility and Flexibility in Public Sector Management, Cross-Cultural Competence in Diverse Communities, Resilience in Crisis Management, Visionary Thinking for National Development",5
+113,Protocol and Event Management,Protokol dan Pengurusan Majlis,"Event Planning, Time Management, Attention to Detail, Organizational Skills, Protocol Knowledge, Communication Skills, Problem Solving",6
+114,Customer Management,Pengurusan Pelanggan,"Customer Service, Relationship Building, CRM Tools, Communication Skills, Conflict Resolution, Empathy, Active Listening",6
+115,Public Speaking,Pengucapan Awam,"Presentation Skills, Confidence, Voice Modulation, Body Language, Audience Engagement, Speech Writing, Storytelling",6
+116,Negotiation,Perundingan,"Persuasion Skills, Conflict Resolution, Communication Skills, Active Listening, Critical Thinking, Problem Solving, Emotional Intelligence",6
+117,Data Science,Sains Data,"Data Mining, Machine Learning, Data Visualization, Statistical Analysis, Big Data Technologies, Data Cleaning, Predictive Modeling, Python/R Programming",8
+118,Software Quality Assurance and Testing,Pengujian dan Jaminan Kualiti Perisian (SQA),"Test Planning, Automated Testing, Manual Testing, Defect Tracking, Test Case Design, Performance Testing, Regression Testing, Test Automation Tools",8
+119,Information Security and Protection,Keselamatan dan Perlindungan Maklumat,"Information Security Policies, Data Encryption, Access Control, Network Security, Incident Response, Security Auditing, Risk Assessment, Compliance Management",8
+120,Digital Knowledge and Information Management,Pengurusan Pengetahuan dan Maklumat Digital,"Knowledge Management Systems, Digital Content Management, Information Retrieval, Digital Archiving, Metadata Standards, Taxonomy Development, Content Strategy, User Experience Design",8
+121,ICT Incident Management and Forensics,Pengurusan Insiden dan Forensik ICT,"Incident Management, Digital Forensics, Security Incident Handling, Threat Analysis, Forensic Tools, Evidence Collection, Incident Reporting, Forensic Investigation",8
+122,Systems Engineering,Kejuruteraan Sistem,"System Design, Hardware Engineering, Software Engineering, System Integration, System Testing, Network Engineering, Embedded Systems, Systems Architecture",8
+123,Information Security Governance and Audit Assessment,Penilaian Tadbir Urus dan Audit Keselamatan Maklumat,"IT Governance, Security Audit, Compliance Auditing, Risk Management, Control Assessment, Security Frameworks, IT Audit Tools, Audit Reporting",8
+124,Enterprise ICT Management,Pengurusan Enterprise ICT,"Enterprise Architecture, Enterprise Resource Planning (ERP), Business Process Management, Enterprise Application Integration, IT Service Management, IT Portfolio Management, Vendor Management, Change Management",8
+125,Digital Skills Trainer,Digital Skills Trainer,"Digital Literacy, Online Communication Tools, Digital Content Creation, Cyber Safety, Basic Programming, Social Media Management, Cloud Services, Digital Collaboration",8
+126,Economics 101,Economics 101,"Basic economic principles, Understanding supply and demand, Data analysis and interpretation, Mathematical skills, Critical thinking",9
+127,International Political Economy,International Political Economy,"Understanding global economic systems, Political theory and analysis, International trade and finance, Policy analysis, Research skills",9
+128,Sustainable Economic Development,Sustainable Economic Development,"Knowledge of sustainable practices, Environmental economics, Policy formulation and implementation, Project management, Stakeholder engagement",9
+129,Future Economic Trends,Future Economic Trends,"Trend analysis and forecasting, Statistical analysis, Technological literacy, Economic modeling, Adaptability to change",9
+130,Governance,Tadbir Urus,"Ethical Decision Making, Compliance, Regulatory Knowledge, Organizational Management, Risk Assessment, Leadership, Strategic Planning",11
+131,Collaborative Governance,Tadbir Urus Kolaborasi,"Stakeholder Engagement, Conflict Resolution, Negotiation, Partnership Building, Interagency Coordination, Communication, Strategic Alliances",11
+132,Public-Private Partnership,Kerjasama Awam Swasta,"Contract Management, Financial Analysis, Negotiation Skills, Risk Sharing, Project Financing, Legal Knowledge, Stakeholder Management, Strategy",11
+133,Public Finance 101,Public Finance 101,"Public budgeting, Fiscal policy, Public expenditure management, Revenue generation, Economic development",16
+134,Accounting,Perakaunan,"Financial reporting, Auditing, Tax accounting, Cost accounting, Bookkeeping",16
+135,Public Order,Ketenteraman Awam,"Law enforcement principles, Public safety strategies, Conflict resolution, Crowd control, Surveillance technology, Legal knowledge",45
+136,Fitness,Kecergasan,"Exercise physiology, Personal training, Nutrition planning, Injury prevention, Strength training, Cardiovascular training",53
+137,Sports & Recreation,Sukan/Rekreasi,"Athletic training, Sports psychology, Event management, Coaching techniques, Physical conditioning, Rehabilitation",53
+138,Religion and Spirituality,Agama dan Kerohanian,"Spiritual Counseling, Comparative Religion Studies, Ethical Decision Making, Cultural Competency, Crisis Intervention, Faith-Based Counseling, Meditation and Mindfulness Practices, Interfaith Dialogue",54
+140,Corporate Governance,Corporate Governance,"Board Management and Oversight, Corporate Strategy Development, Risk Management, Regulatory Compliance, Ethical Leadership, Stakeholder Engagement, Corporate Social Responsibility (CSR), Financial Reporting",57
+141,Financial Governance,Financial Governance,"Financial Planning and Analysis, Budgeting and Forecasting, Internal Controls, Financial Risk Management, Compliance with Financial Regulations, Audit and Assurance, Financial Reporting and Analysis, Strategic Financial Management",57
+142,Graphic Design & Editing,Graphic Design/Editing,"Adobe Creative Suite (Photoshop, Illustrator, InDesign), Typography, Layout Design, Color Theory, Image Editing, Branding, Print and Digital Media Knowledge, Project Management, Attention to Detail, Communication Skills.",58
+143,Creative Image & Video,Creative Image/Video,"Video Editing (Premiere Pro, Final Cut Pro), Motion Graphics, Visual Effects (After Effects), Cinematography, Storyboarding, Color Grading, Sound Design, Content Creation, Digital Asset Management, Social Media Strategy.",58
+144,Foreign Policy,Dasar Luar Negara,"Understanding of international relations theories, Knowledge of global political dynamics, Policy analysis and development, Negotiation skills, Strategic planning",59
+145,International Law,Undang-undang Antarabangsa,"Comprehensive knowledge of international treaties and conventions, Legal research and analysis, Expertise in conflict resolution, Human rights law, Diplomatic communication",59
+146,International Negotiation,Perundingan Antarabangsa,"Skilled in negotiation tactics and strategies, Cross-cultural communication, Conflict resolution, Strategic planning, Stakeholder management",59
+147,International Security,Keselamatan Antarabangsa,"Knowledge of global security issues, Risk assessment and management, Cybersecurity expertise, Crisis management, Strategic defense planning",59
+148,Innovation Commercialization,Pengkomersialan inovasi,"Market analysis, Business development, Product lifecycle management, Strategic partnerships, Investment and funding strategies, Marketing and sales strategies",43
+149,Creativity in Work Culture,Creativity in Work Culture,"Leadership and management, Organizational behavior, Employee motivation and engagement, Creative problem-solving, Change management, Innovation facilitation",43
+151,Library and Reading Management,Perpustakaan dan Pembacaan,"Cataloging, reference services, information literacy, digital resources management",12
+152,Digital Marketing,PEMASARAN DIGITAL,"SEO, SEM, Social Media Marketing, Content Creation, Email Marketing, Data Analysis, Google Analytics, PPC Advertising, Digital Strategy, CRM",60
+153,Aquaculture,AKUAKULTUR,"Aquatic animal husbandry, water quality management, disease management, feed formulation, farm management",62
+154,Fisheries Conservation and Protection,KONSERVASI DAN PERLINDUNGAN PERIKANAN,"Ecosystem management, species protection, habitat restoration, regulatory compliance, monitoring and evaluation",62
+155,Fisheries Research,PENYELIDIKAN PERIKANAN,"Data collection and analysis, research methodologies, statistical analysis, report writing, fieldwork skills",62
+156,Food Processing,PEMPROSESAN MAKANAN,"Food Safety Regulations, HACCP, Quality Control, Process Engineering, Food Preservation Techniques, Equipment Operation and Maintenance, Supply Chain Management, Sensory Analysis, Nutritional Analysis, Product Development",60
+157,Animal Husbandry,TERNAKAN,"Animal care, feeding practices, herd management, knowledge of animal health, nutrition, welfare.",61
+158,Food Quality and Safety,KUALITI DAN KESELAMATAN MAKANAN,"Food Safety Standards, Risk Management, Quality Assurance, Regulatory Compliance, Laboratory Testing Techniques, Traceability Systems, Auditing and Inspection, Foodborne Pathogen Control, Sensory Evaluation, Documentation and Reporting",60
+159,Disease Control,KAWALAN PENYAKIT,"Disease diagnosis, epidemiology, vaccination protocols, quarantine procedures, biosecurity measures.",61
+160,Counseling Literacy,LITERASI KAUNSELING,"Active Listening, Empathy and Rapport Building, Counseling Techniques and Strategies, Case Management, Ethical and Legal Issues in Counseling, Client Assessment and Evaluation, Crisis Counseling, Therapeutic Communication",54
+161,Writing,PENULISAN,"Creative Writing, Copywriting, Editing and Proofreading, Research Skills, SEO Writing, Technical Writing, Storytelling, Content Strategy, Understanding of Publishing Platforms, Adaptability.",58
+162,Development,PENGEMBANGAN,"Project management, policy formulation, stakeholder engagement, resource planning, implementation strategies.",61
+163,Livestock Industry,INDUSTRI ASAS TERNAKAN,"Market analysis, production optimization, supply chain management, industry regulations, quality control.",61
+164,Certification,PENSIJILAN,"Understanding certification standards, quality assurance, regulatory compliance, auditing procedures.",61
+166,Dairy,TENUSU,"Milk production techniques, dairy cattle management, pasteurization, quality control, dairy product processing.",61
+167,Meat Inspection,PEMERIKSAAN DAGING,"Meat quality assessment, hygiene standards, regulatory requirements, safety protocols.",61
+168,Breeding,PEMBIAKBAKAAN,"Genetic selection, reproductive management, herd improvement strategies, breeding programs.",61
+169,Capture Fisheries Resources,SUMBER PERIKANAN TANGKAPAN,"Resource assessment, fishing techniques, gear technology, sustainability practices, marine biology",62
+170,Fisheries Development,PENGEMBANGAN PERIKANAN,"Project management, market analysis, policy development, community engagement, financial planning",62
+171,Fisheries Biosecurity,BIOSEKURITI PERIKANAN,"Disease management, biosecurity protocols, surveillance techniques, quarantine procedures, pathogen identification",62
+172,Thai Language,BAHASA THAI,"Proficiency in Official Communication, Advanced Vocabulary in Government Terminology, Public Speaking Skills, Listening Comprehension in Formal Settings, Official Report Writing Skills",3
+173,Tamil Language,BAHASA TAMIL,"Proficiency in Official Communication, Advanced Vocabulary in Government Terminology, Public Speaking Skills, Listening Comprehension in Formal Settings, Official Report Writing Skills",3
+174,Radio Engineering,KEJURUTERAAN RADIO,"Audio signal processing, transmitter operation, radio frequency engineering, equipment maintenance, troubleshooting",64
+176,Radio Program,PROGRAM RADIO,"Content creation, scriptwriting, audio production, audience engagement, program scheduling, broadcast technology",64
+177,Social Media,MEDIA SOSIAL,"Social media strategy, content creation, audience analysis, engagement techniques, platform algorithms",64
+178,TV Program,PROGRAM TV,"Scriptwriting, video editing, camera operation, production coordination, audience analysis, broadcast technology",64
+179,Presentation On Air,PRESENTATION ON AIR,"Public speaking, live broadcasting, on-air presence, script reading, audience engagement, crisis management",64
+180,TV Engineering,KEJURUTERAAN TV,"Video signal processing, broadcast equipment maintenance, transmission technology, troubleshooting",64
+181,Integrated Engineering,KEJURUTERAAN BERSEPADU,"Multi-platform integration, systems engineering, signal routing, equipment interoperability, troubleshooting",64
+182,Technical Supervision,PENYELIAAN TEKNIKAL,"Technical team management, equipment maintenance, broadcast quality control, troubleshooting, project management",64
+183,Strategic Communication GSPI,KOMUNIKASI STRATEGIK GSPI,"Strategic Planning, Communication Strategy, Analytical Skills, Public Relations, Crisis Management, Stakeholder Engagement, Research Skills",6
+184,Creative Intelligence,CREATIVE INTELLIGENCE,"Creative problem solving, innovation management, multimedia design, trend analysis, content development",64
+185,Photography,FOTOGRAFI,"Camera operation, lighting techniques, photo editing, composition, image quality assessment",64
+186,News Content,KANDUNGAN BERITA,"Journalism, investigative reporting, content research, scriptwriting, fact-checking, news editing",64
+187,TV Production,PENERBITAN TV,"Video production, editing, scriptwriting, camera work, set design, project management",64
+188,Radio Production,PENERBITAN RADIO,"Audio editing, scriptwriting, voice-over techniques, sound engineering, content scheduling",64
+189,New Media Communication,KOMUNIKASI MEDIA BAHARU,"Social Media Management, Content Creation, Digital Marketing, SEO/SEM, Data Analytics, Creative Writing, Multimedia Skills",6
+190,Data Management (Microsoft),PENGURUSAN DATA (MICROSOFT),"Data Analysis, Excel Proficiency, Data Visualization, Database Management, SQL, Power BI, Data Integrity",6

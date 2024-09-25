@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Course Recommendation System{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 50px; /* Space for the fixed header */
+            padding-bottom: 40px; /* Space for the fixed footer */
+        }
+
+        .navbar {
+            background-color: #343a40;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: auto;
+            z-index: 1000;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+
+        .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+
+        /* Adjust logo size and position */
+        .navbar-brand img {
+            height: 50px; /* Adjust the height to fit the header */
+            margin-right: 60px;
+        }
+
+        .header-title {
+            margin-top: 15px;
+            color: #343a40;
+        }
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label,
+        .rating input:checked ~ label {
+            color: #ffcc00;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-card-content {
+            padding: 20px;
+        }
+
+        .course-card h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        .course-card p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .course-card .job-role {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2980b9;
+        }
+
+        .course-card .skills-required,
+        .course-card .sub-skills-required {
+            font-size: 14px;
+            color: #34495e;
+            margin: 5px 0;
+        }
+
+        /* Fixed footer at the bottom */
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            white-space: nowrap; /* Prevents line breaks */
+            overflow: hidden; /* Hides any overflow */
+            text-overflow: ellipsis; /* Adds ellipsis if the content overflows */
+        }
+
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            flex: 1;
+            margin-top: 20px;
+        }
+    </style>
+
+    {% block styles %}{% endblock %}
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Course Recommender Logo">
+                ML-Driven Course Recommender
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-plus-circle"></i> Collaborative Filtering</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('domain') }}"><i class="fas fa-plus-circle"></i> Content-Based Filtering</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('visualize_wdata') }}"><i class="fas fa-plus-circle"></i> Data Visualization</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{{ url_for('data_visualization_2') }}"><i class="fas fa-plus-circle"></i> Data Visualization(2)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/readme" class="btn btn-secondary"> View README </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content block -->
+    <div class="container">
+        {% block content %}
+        <!-- Page-specific content will be injected here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Course Recommender. All rights reserved. | 
+            <a href="/privacy">Privacy Policy</a> | 
+            <a href="/terms">Terms of Service</a>
+        </p>
+    </div>
+
+    <!-- Include any scripts you need here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "J3XiSrABkvoVwPOKfO1HY",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="J3XiSrABkvoVwPOKfO1HY"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>
