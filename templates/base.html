@@ -15,12 +15,13 @@
             flex-direction: column;
             min-height: 100vh;
             margin: 0;
-            padding-top: 50px; /* Space for the fixed header */
-            padding-bottom: 40px; /* Space for the fixed footer */
+            padding-top: 50px;
+            padding-bottom: 40px;
+            background-color: #FFFFFF; /* Clean white background */
         }
 
         .navbar {
-            background-color: #343a40;
+            background-color: #2C3E50; /* Dark gray-blue for the navbar */
             position: fixed;
             top: 0;
             width: 100%;
@@ -29,22 +30,22 @@
         }
 
         .navbar-brand, .nav-link {
-            color: #ffffff !important;
+            color: #FFFFFF !important;
         }
 
         .nav-link:hover {
-            color: #ffcc00 !important;
+            color: #4CAF50 !important; /* Soft green hover effect */
         }
 
         /* Adjust logo size and position */
         .navbar-brand img {
-            height: 50px; /* Adjust the height to fit the header */
+            height: 50px;
             margin-right: 60px;
         }
 
         .header-title {
             margin-top: 15px;
-            color: #343a40;
+            color: #333333; /* Dark text for readability */
         }
 
         .rating {
@@ -67,7 +68,7 @@
         .rating label:hover,
         .rating label:hover ~ label,
         .rating input:checked ~ label {
-            color: #ffcc00;
+            color: #4CAF50; /* Green for rating stars */
         }
 
         .grid-container {
@@ -78,7 +79,7 @@
         }
 
         .course-card {
-            background: white;
+            background: #FFFFFF;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -96,19 +97,19 @@
         .course-card h3 {
             margin: 0;
             font-size: 20px;
-            color: #2c3e50;
+            color: #333333; /* Dark text */
         }
 
         .course-card p {
             margin: 10px 0;
             font-size: 14px;
-            color: #7f8c8d;
+            color: #7f8c8d; /* Light gray for descriptions */
         }
 
         .course-card .job-role {
             font-weight: bold;
             font-size: 14px;
-            color: #2980b9;
+            color: #2196F3; /* Accent blue */
         }
 
         .course-card .skills-required,
@@ -120,20 +121,17 @@
 
         /* Fixed footer at the bottom */
         .footer {
-            background-color: #343a40;
-            color: #ffffff;
+            background-color: #2C3E50; /* Dark gray-blue footer */
+            color: #FFFFFF;
             padding: 10px 0;
             text-align: center;
             position: fixed;
             bottom: 0;
             width: 100%;
-            white-space: nowrap; /* Prevents line breaks */
-            overflow: hidden; /* Hides any overflow */
-            text-overflow: ellipsis; /* Adds ellipsis if the content overflows */
         }
 
         .footer a {
-            color: #ffcc00;
+            color: #4CAF50; /* Soft green for footer links */
             text-decoration: none;
         }
 
@@ -144,6 +142,16 @@
         .container {
             flex: 1;
             margin-top: 20px;
+        }
+
+        .btn-secondary {
+            background-color: #4CAF50; /* Green button */
+            border-color: #4CAF50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #388E3C; /* Darker green on hover */
+            border-color: #388E3C;
         }
     </style>
 
@@ -165,6 +173,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="https://skill-gap.onrender.com" target="_blank"><i class="fas fa-plus-circle"></i> Skill-Gap</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-plus-circle"></i> Collaborative Filtering</a>
                     </li>
                     <li class="nav-item">
@@ -173,8 +184,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('visualize_wdata') }}"><i class="fas fa-plus-circle"></i> Data Visualization</a>
                     </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="{{ url_for('data_visualization_2') }}"><i class="fas fa-plus-circle"></i> Data Visualization(2)</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('data_visualization_2') }}"><i class="fas fa-plus-circle"></i> Data Visualization (2)</a>
                     </li>
                     <li class="nav-item">
                         <a href="/readme" class="btn btn-secondary"> View README </a>
@@ -203,19 +214,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        window.embeddedChatbotConfig = {
-        chatbotId: "J3XiSrABkvoVwPOKfO1HY",
-        domain: "www.chatbase.co"
-        }
-        </script>
-        <script
-        src="https://www.chatbase.co/embed.min.js"
-        chatbotId="J3XiSrABkvoVwPOKfO1HY"
-        domain="www.chatbase.co"
-        defer>
-        </script>
 
     {% block scripts %}{% endblock %}
 
