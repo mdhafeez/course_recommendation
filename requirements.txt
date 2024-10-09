@@ -10,14 +10,5 @@ pygwalker
 dash
 plotly
 markdown
-
-## How to run the project
-
-1. Clone the repository
-2. Run the following command in the terminal
-
-```
-python app.py
-```
-
-3. Open the link in the terminal
+gunicorn
+whitenoise
