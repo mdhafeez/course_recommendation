@@ -15,6 +15,10 @@ from eda import create_visualization  # Correct import from eda.py
 
 app = Flask(__name__)
 
+@app.route('/skillgap')
+def skillgap():
+    return render_template('skillgap.html')
+
 # Load data
 courses_df = pd.read_csv('courses.csv')
 ratings_df = pd.read_csv('ratings.csv') if pd.io.common.file_exists('ratings.csv') else pd.DataFrame()

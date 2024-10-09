@@ -163,9 +163,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="Course Recommender Logo">
-                ML-Driven Course Recommender
-            </a>
+                <img src="{{ url_for('static', filename='logo2.png') }}" alt="Course Recommender Logo">
+                <!-- <img src="{{ url_for('static', filename='logo.png') }}" alt="Proficiency logo"> -->
+                Proficiency+</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -173,8 +173,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://skill-gap.onrender.com" target="_blank"><i class="fas fa-plus-circle"></i> Skill-Gap</a>
-                    </li>
+                        <a class="nav-link" href="{{ url_for('skillgap') }}" target="_blank">
+                            <i class="fas fa-plus-circle"></i> Skill-Gap 
+                            <span class="badge badge-danger" style="font-size: 7px; padding: 4px 5px;">Coming Soon</span>
+                        </a>
+                    </li>                   
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}"><i class="fas fa-plus-circle"></i> Collaborative Filtering</a>
                     </li>
